@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'spree', github: 'spree/spree', branch: 'master'
-gem 'pry-rails'
+# gem 'spree_sample', '~> 1.2.0'
+
 gemspec
