@@ -1,0 +1,5 @@
+en:
+  spree:
+    notice_messages:
+      custom_style_deleted: Style has been deleted
+      custom_style_not_deleted: Custom Style could not be deleted

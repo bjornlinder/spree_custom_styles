@@ -4,8 +4,21 @@ In some use cases we may want to offer the same sets of variants for a large num
 
 Custom Styles is modeled after other Spree extensions. Comments and pull requests are welcomed.
 
+** Additional Notes
+
+Why 'Custom Styles'? Avoid potential name conflicts & differentiate from 'Style' in the application assets context.
+
+Some additional coding would be needed to integrate with physical inventory. 
+
 ## Install
 
 The extension contains a rails generator that will add the necessary migrations and give you the option to run the migrations, or run them later, perhaps after installing other extensions. Once you have bundled the extension, run the install generator and its ready to use.
 
-      rails generate spree_custom_styles:install
+      <!-- rails generate spree_custom_styles:install -->
+      
+      bundle exec rake railties:install:migrations
+      bundle exec rake db:migrate
+
+## Store coming soon!
+
+See the extension in practice... also plan to add frontend views with custom styles to the gem.

@@ -1,17 +1,17 @@
 module SpreeCustomStyles
   class Engine < Rails::Engine
     isolate_namespace SpreeCustomStyles
-    engine_name "spree_custom_styles"
+    engine_name 'spree_custom_styles'
 
     config.to_prepare do
-      #loads application's model / class decorators
-      Dir.glob(File.join(File.dirname(__FILE__), "../../app/**/*_decorator*.rb")) do |c|
+      # loads application's model / class decorators
+      Dir.glob(File.join(File.dirname(__FILE__), '../../app/**/*_decorator*.rb')) do |c|
         Rails.application.config.cache_classes ? require(c) : load(c)
       end
     end
 
-    initializer "spree_custom_styles.environment", :before => :load_config_initializers, :after => "spree.environment" do |app|
-      Dir.glob(File.join(File.dirname(__FILE__), "../../app/models/spree/app_configuration/*.rb")) do |c|
+    initializer 'spree_custom_styles.environment', before: :load_config_initializers, after: 'spree.environment' do |_app|
+      Dir.glob(File.join(File.dirname(__FILE__), '../../app/models/spree/app_configuration/*.rb')) do |c|
         Rails.application.config.cache_classes ? require(c) : load(c)
       end
       # app.config.spree.add_class('variant_preferences')
