@@ -6,6 +6,7 @@
 Gemfile.lock
 pkg/*
 spec/dummy
+spec/spree_main
 coverage
 .rvmrc
 .ruby-version
