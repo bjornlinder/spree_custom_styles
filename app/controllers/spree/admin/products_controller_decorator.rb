@@ -1,4 +1,4 @@
-Spree::ProductsController.class_eval do
+Spree::Admin::ProductsController.class_eval do
   before_action :exclude_styles, only: :index
 
   private
