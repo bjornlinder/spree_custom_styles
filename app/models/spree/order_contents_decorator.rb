@@ -13,10 +13,9 @@ Spree::OrderContents.class_eval do
       line_item.quantity += quantity.to_i
       line_item.currency = currency unless currency.nil?
     else
-      opts = ActionController::Parameters.new(options.to_h)
-                                         .permit(Spree::PermittedAttributes.line_item_attributes).to_h
+      opts = options.permit(Spree::PermittedAttributes.line_item_attributes).to_h
                                          .merge(currency: order.currency)
-
+ 
       line_item = order.line_items.new(quantity: quantity,
                                        variant: variant,
                                        custom_style_id: custom_style_id,

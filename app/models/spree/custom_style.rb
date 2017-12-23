@@ -11,8 +11,11 @@ module Spree
     has_many :properties, through: :product_properties
     has_many :option_types, through: :product_option_types
     has_many :prices, through: :master_product
+    has_many :taxons, through: :master_product
 
-    delegate_belongs_to :master_product, :price, :master, :currency, :display_amount, :display_price, :weight
+    delegate :price, :master, :currency, :display_amount,
+             :display_price, :weight,
+             to: :master_product
 
     # Spree::CustomStyle.all gives only custom styles by default;
     # Spree::Product.all will not return any custom styles.
