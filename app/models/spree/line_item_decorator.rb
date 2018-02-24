@@ -10,6 +10,6 @@ Spree::LineItem.class_eval do
   end
 
   def product_style
-    custom_style ? custom_style.becomes(Spree::CustomStyle) : variant.product
+    custom_style_id ? Spree::CustomStyle.find(custom_style_id) : variant.product
   end
 end
