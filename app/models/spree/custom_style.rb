@@ -13,7 +13,9 @@ module Spree
     has_many :prices, through: :master_product
     has_many :taxons, through: :master_product
 
-    delegate :price, :master, :currency, :display_amount,
+    before_validation { delegate :master, to: :master_product }
+    
+    delegate :price, :currency, :display_amount,
              :display_price, :weight,
              to: :master_product
 
