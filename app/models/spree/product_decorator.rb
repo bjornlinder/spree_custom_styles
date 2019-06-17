@@ -6,4 +6,12 @@ Spree::Product.class_eval do
   def has_custom_styles?
     custom_styles.any?
   end
+
+  def method_missing(m, *args, &block)
+    if master.respond_to?(m)
+      master.send(m, *args, &block)
+    else
+      super
+    end
+  end
 end

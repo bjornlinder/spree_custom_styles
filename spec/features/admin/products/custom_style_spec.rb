@@ -5,7 +5,7 @@ require 'spec_helper'
 describe 'Custom Styles', type: :feature, js: true do
   stub_authorization!
 
-  let!(:base_product) { create(:base_product) }
+  let!(:master_product) { create(:master_product) }
   let(:file_path) { Rails.root + '../../spec/support/ror_ringer.jpeg' }
 
   context 'creating a new custom style' do
@@ -31,7 +31,7 @@ describe 'Custom Styles', type: :feature, js: true do
 
   context 'editing and deleting an existing custom style' do
     it 'should allow an admin to update an existing style' do
-      create(:custom_style, master_product: base_product, name: 'Yellow Shirt', slug: 'yellow-shirt')
+      create(:custom_style, master_product: master_product, name: 'Yellow Shirt', slug: 'yellow-shirt')
       visit spree.admin_products_path
 
       within_row(1) { click_icon :edit }

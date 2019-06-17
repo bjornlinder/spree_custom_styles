@@ -9,8 +9,8 @@ module SpreeCustomStyles
 
   module VERSION
     MAJOR = 3
-    MINOR = 4
-    TINY  = 4
+    MINOR = 7
+    TINY  = 0
     PRE   = 'pre'.freeze
 
     STRING = [MAJOR, MINOR, TINY, PRE].compact.join('.')

@@ -13,7 +13,9 @@ end
 require 'rspec/rails'
 require 'ffaker'
 require 'shoulda-matchers'
+require 'phantomjs/poltergeist'
 require 'pry'
+require 'factory_bot_rails'
 
 RSpec.configure do |config|
   config.fail_fast = false

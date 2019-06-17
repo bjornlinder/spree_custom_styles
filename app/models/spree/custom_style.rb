@@ -1,3 +1,4 @@
+require 'active_support/core_ext/module'
 module Spree
   class CustomStyle < Spree::Product
     has_many :images, -> { order(:position) }, as: :viewable, dependent: :destroy, class_name: 'Spree::Image'
@@ -13,8 +14,6 @@ module Spree
     has_many :prices, through: :master_product
     has_many :taxons, through: :master_product
 
-    before_validation { delegate :master, to: :master_product }
-    
     delegate :price, :currency, :display_amount,
              :display_price, :weight,
              to: :master_product
