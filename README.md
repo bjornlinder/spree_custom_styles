@@ -1,6 +1,6 @@
 # Custom Styles
 
-In some use cases we may want to offer the same sets of variants for a large number of functionally equivalent products. Attempting to use the standard Spree store to support this can result in exponentially increasing numbers of variants. Here we introduce another model, CustomStyle, to supplement the Variant model. Customers choose a style for the product in the same way that they choose variants otherwise. Images associated with products are now accessed via the CustomStyle model.
+In some use cases we may want to offer the same sets of variants for a large number of functionally equivalent products. Attempting to use the standard Spree store to support this can result in exponentially increasing numbers of variants. Here we introduce another model, CustomStyle, to supplement the Variant model. Customers choose a style for the product in the same way that they choose variants otherwise. Images associated with products are now accessed via the CustomStyle model. In the same way we can have a master variant, products can now belong to a master_product.
 
 Custom Styles is modeled after other Spree extensions. Comments and pull requests are welcomed.
 
