@@ -2,7 +2,7 @@ Spree::OrdersController.class_eval do
   def edit
     @order = current_order || Spree::Order.incomplete
                                           .includes(line_items: [variant: %i[images option_values product]])
-                                          .find_or_initialize_by(guest_token: cookies.signed[:guest_token])
+                                          .find_or_initialize_by(token: cookies.signed[:token])
     associate_user
   end
 

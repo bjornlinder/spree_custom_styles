@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = SpreeCustomStyles.version
   s.summary     = 'Adds CustomStyle model to Spree'
   s.description = s.summary
-  s.required_ruby_version = '>= 2.1.0'
+  s.required_ruby_version = '>= 2.2.0'
 
   s.author   = 'Bjorn Linder'
   s.email    = 'bjornishungry@gmail.com'

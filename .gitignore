@@ -8,6 +8,7 @@ pkg/*
 spec/dummy
 spec/spree_main
 coverage
+dev/
 .rvmrc
 .ruby-version
 .ruby-gemset

@@ -1,9 +1,9 @@
+require 'aws-sdk-s3'
 module Spree
   module Admin
     class CustomStylesController < ResourceController
       belongs_to 'spree/custom_styles', find_by: :slug
       before_action :load_data, only: %i[new create edit update]
-      before_action :clean_image_association, only: %i[create update]
 
       # override the destroy method to set deleted_at value
       # instead of actually deleting the product.
@@ -56,12 +56,6 @@ module Spree
 
       def load_data
         @image = @object.images.first || @object.images.build
-      end
-
-      # Rails adds a new image association with the correct information on assigning @object attributes. @object.images.build is necessary for the image form to render, generating a blank image record for the object that we delete here. Open to suggestions so that we wouldn't need this workaround.
-      def clean_image_association
-        img = @object.images.first
-        @object.images.delete(img) unless img.valid?
       end
 
       def permitted_resource_params
